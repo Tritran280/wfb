@@ -1,0 +1,59 @@
+#snowflakes{
+	display: flex;
+	justify-content: space-between;
+
+	
+}
+body {
+	margin-top: -20px;
+	background-color: rgb(209, 222, 222);
+}
+
+
+@keyframes falling {
+	0% {
+	  transform: translateY(0);
+	}
+	100% {
+	  transform: translateY(100vh);
+	}
+}
+  
+.snowflake {
+
+width: 20px;
+height: 20px;
+border-radius: 50%;
+transition: transform 0.5s ease;
+animation: falling 5s linear infinite;
+
+}
+.snowflake::before {
+	content: "\2744";
+	color: aqua;  /* Unicode ký tự cho icon bông tuyết */
+  }
+.snowflake:hover {
+	transform: scale(1.2);  /* Tăng kích thước bông tuyết lên 20% khi người dùng di chuyển con trỏ chuột vào */
+  }
+
+
+  #giftbox {
+	width: 20px;
+	height: 30px;
+	border-radius: 10px;
+  }
+  #giftbox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+  }
+  #giftbox::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f06b";
+	font-size: 64px;
+	color: rgb(224, 38, 38);
+  }
+  

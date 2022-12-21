@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body id="snowflakes">
+	<div id="giftbox"></div>
+</body>
+<script>
+	const snowflakesContainer = document.getElementById('snowflakes');
+	const numSnowflakes = 100;
+
+	for (let i = 0; i < numSnowflakes; i++) {
+		const snowflake = document.createElement('div');
+		snowflake.classList.add('snowflake');
+		snowflake.style.left = `${Math.random() * 10}vw`;
+		snowflake.style.top = `${Math.random() * 100}vh`;
+		snowflake.style.animationDelay = `${Math.random() * 5}s`;
+		snowflake.style.animationDuration = `${Math.random() * 4 + 5}s`;
+		snowflake.addEventListener('mouseenter', event => {
+			snowflake.style.transform = 'scale(1.2)';
+		});
+		snowflake.addEventListener('mouseleave', event => {
+			snowflake.style.transform = 'scale(1)';
+		});
+		snowflakesContainer.appendChild(snowflake);
+	}
+	const giftbox = document.createElement('div');
+	giftbox.id = 'giftbox';
+	document.body.appendChild(giftbox);
+	
+</script>
+
+</html>
